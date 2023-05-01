@@ -22,7 +22,7 @@ import { login } from '@/services/login.js';
 export default () => {
   const [loginType, setLoginType] = useState('phone');
   // const { initialState, setInitialState } = useModel('@@initialState');
-
+  let navigate=useNavigate();
   return (
     <div
       style={{ height: '100vh', backgroundColor: 'white', paddingTop: '25vh' }}
@@ -32,8 +32,15 @@ export default () => {
         onFinish={async (v) => {
           console.log("V",v)
           const res=await login(v);
-        
-          console.log("res",res)
+          // console.log("res",res);
+          if(res.code===200){
+            console.log("我我我我")
+            localStorage.setItem("token",res.token)
+            console.log("reeee",res);
+            localStorage.setItem("parent_uuid",res.uuid)
+            navigate("/customer");
+            message.success("登录成功")
+          }
         }}
         title="记账本"
       >

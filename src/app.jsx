@@ -17,7 +17,10 @@ export const request = {
     requestInterceptors: [
       (config) => {
       // 拦截请求配置，进行个性化处理。
-        
+        if(localStorage.getItem("token")){
+          config.headers["Authorization"]="Bearer "+localStorage.getItem("token")
+        }
+
         return { ...config};
       }
     ],
@@ -26,11 +29,18 @@ export const request = {
     responseInterceptors: [
       (response) => {
          // 拦截响应数据，进行个性化处理
-        //  const { data } = response;
-        //  if(!data.success){
+    
+        //  console.log("data",data);
+        // console.log("response",response)
+        //  if(response.code!=500&&response.data.code!==200){
+        //   console.log("失败")
         //    message.error('请求失败！');
+        //  }else{
+        //   console.log("成功")
+          
         //  }
-        //  return response;
+         return response;
       }
+
     ]
   };

@@ -24,6 +24,11 @@ export default defineConfig({
       menuRender: false,
       headerRender: false
     },
+    {
+      path:"/customer",
+      component:"@/pages/Customer",
+      name:"客户管理"
+    }
 
   ],
   
