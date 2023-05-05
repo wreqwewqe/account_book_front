@@ -21,4 +21,12 @@ const createCustomer=(data)=>{
      data
    });
 }
-export {customerLists,updateCustomer,createCustomer} 
+
+//删除客户
+const deleteCustomer=(data)=>{
+  return request('/customer/delete',{
+     method:"post",
+     data
+   });
+}
+export {customerLists,updateCustomer,createCustomer,deleteCustomer} 

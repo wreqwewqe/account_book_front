@@ -8,5 +8,13 @@ import { request } from "umi";
       });
 }
 
+//当前登录用户信息
+const currentInfo=(data)=>{
+  return request('/users/info',{
+     method:"post",
+     data
+   });
+}
 
-export {login} 
+
+export {login,currentInfo} 

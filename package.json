@@ -2,8 +2,7 @@
   "private": true,
   "author": "",
   "scripts": {
-    "build": "cross-env UMI_ENV=kaifa max build",
-    "build:prod": "UMI_ENV=shengchan max build",
+    "build": "cross-env UMI_ENV=bendi max build",
     "dev": "cross-env UMI_ENV=bendi max dev",
     "format": "prettier --cache --write .",
     "postinstall": "max setup",

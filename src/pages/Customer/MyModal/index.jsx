@@ -31,7 +31,10 @@ export default function MyModal({open,setOpen,customerInfo,setCustomerInfo,form,
                         message.success("更新成功")
                     }
                     setOpen(false);
-                    setParams({})
+                    setParams({
+                        pagenum:1,
+                        pagesize:6
+                    })
                     
                     // console.log("res",res);
                 }else{
@@ -43,7 +46,10 @@ export default function MyModal({open,setOpen,customerInfo,setCustomerInfo,form,
                        
                     }
                     setOpen(false);
-                    setParams({})
+                    setParams({
+                        pagenum:1,
+                        pagesize:6
+                    })
                 }
                
             })

@@ -27,9 +27,19 @@ export default defineConfig({
     {
       path:"/customer",
       component:"@/pages/Customer",
-      name:"客户管理"
+      name:"客户管理",
+      // headerRender: true
+    },
+    {
+      path:"/order",
+      component:"@/pages/Order",
+      name:"订单管理"
+    },
+    {
+      path:"/profile",
+      component:"@/pages/Profile",
+      name:"个人信息"
     }
-
   ],
   
   npmClient: 'npm',
