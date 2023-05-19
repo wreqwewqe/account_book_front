@@ -37,8 +37,18 @@ export default defineConfig({
     },
     {
       path:"/profile",
-      component:"@/pages/Profile",
+      component:"@/pages/Profile",  
       name:"个人信息"
+    },
+    {
+      path:"/chat",
+      component:"@/pages/Chat",
+      name:"ai聊天",
+    },
+    {
+      path:"/img",
+      component:"@/pages/AIGCImg",
+      name:"ai图片",
     }
   ],
   

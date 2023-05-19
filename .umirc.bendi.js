@@ -3,9 +3,9 @@ import { defineConfig, utils } from "umi";
 export default defineConfig({
   define:{
     //生成
-    // "BASE_URL":"http://81.69.240.49:5001",
+    // "BASE_URL":"http://129.226.200.159",
     //开发
-    "BASE_URL":"http://127.0.0.1:5001",
+    // "BASE_URL":"http://127.0.0.1:5001",
     "IMG":[
       255,
       216,
@@ -60561,12 +60561,18 @@ export default defineConfig({
     ],
   },
   
-  // proxy: {
-  //   '/api': {
-  //     'target': 'http://localhost:5001/',
-  //     'changeOrigin': true,
-  //     'pathRewrite': { '^/api': '' },
-  //   },
-  // },
+  proxy: {
+    '/api': {
+      'target': 'http://127.0.0.1:5001',
+      'changeOrigin': true,
+      'pathRewrite': { '^/api': '/api' },
+      // "secure":false,
+    },
+    '/v1': {
+      'target': 'https://api.openai.com',
+      'changeOrigin': true,
+      'pathRewrite': { '^/v1': '/v1' },
+    },
+  },
  
 });

@@ -2,7 +2,7 @@ import { request } from "umi";
 
 //订单列表
  const orderLists=(data)=>{
-     return request('/orders/list',{
+     return request('/api/orders/list',{
         method:"post",
         data
       });
@@ -10,7 +10,7 @@ import { request } from "umi";
 
 //订单列表
 const updateOrder=(data)=>{
-  return request('/orders/update',{
+  return request('/api/orders/update',{
      method:"post",
      data
    });
@@ -18,7 +18,7 @@ const updateOrder=(data)=>{
 
 //创建订单
 const CreateOrder=(data)=>{
-  return request('/orders/create',{
+  return request('/api/orders/create',{
      method:"post",
      data
    });
@@ -26,7 +26,7 @@ const CreateOrder=(data)=>{
 
 //删除订单
 const deleteOrder=(data)=>{
-  return request('/orders/delete',{
+  return request('/api/orders/delete',{
      method:"post",
      data
    });

@@ -3,14 +3,14 @@ import {request} from "umi"
 //更新用户
 
 const updateUser=(data)=>{
-    return request('/users/update',{
+    return request('/api/users/update',{
        method:"post",
        data
      });
   }
  //上传头像
 const uploadImg=(data)=>{
-    return request('/users/upload',{
+    return request('/api/users/upload',{
        method:"post",
        data
      });
@@ -18,7 +18,7 @@ const uploadImg=(data)=>{
 
 //获取图片
  const getAvatar=(data)=>{
-   return request(`/${data}`,{
+   return request(`/api/${data}`,{
       method:"get",
       data
     });

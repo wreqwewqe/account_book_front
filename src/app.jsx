@@ -19,7 +19,7 @@ export async function getInitialState() {
   if(res.code===200){
     return {
       info:res.data.info,
-      avatar:url
+      avatar:url,
     };
   }else{
     return {}
@@ -48,18 +48,32 @@ export const request = {
     
     // 统一的请求设定
     timeout: 1000000,
-    baseURL:BASE_URL,
+    // baseURL:BASE_URL,
     headers: {'X-Requested-With': 'XMLHttpRequest'},
   
    
     // 请求拦截器
     requestInterceptors: [
       (config) => {
+        console.log("config",config)
+        console.log("坏了")
+        console.log("666",config.url)
+        console.log("777",typeof config.url)
+  
+        if(config.url.startsWith("/v1")){
+          console.log("我是ai")
+          config.headers["Authorization"]="Bearer "+"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"
+                                                    //  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
+          // config.url="https://129.226.200.159"+config.url;
+          console.log("改成过后的config.url",config.url);
+          return { ...config};
+        }
       // 拦截请求配置，进行个性化处理。
         if(localStorage.getItem("token")){
+          console.log("我是登录")
           config.headers["Authorization"]="Bearer "+localStorage.getItem("token")
         }
-
+        console.log("我是nima")
         return { ...config};
       }
     ],

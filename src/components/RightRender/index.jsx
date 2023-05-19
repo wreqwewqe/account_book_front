@@ -2,9 +2,10 @@ import React from 'react'
 import {Avatar,Popover, message} from "antd"
 import {useNavigate,useModel } from "umi"
 import styles from './index.less'
-export default function RightRender({initialState}) {
-  // const { initialState, loading, error, refresh, setInitialState } =useModel('@@initialState');
+export default function RightRender() {
+  const { initialState, loading, error, refresh, setInitialState } =useModel('@@initialState');
   let navigate = useNavigate();
+  console.log("initialState",initialState)
   const logout=()=>{
     localStorage.removeItem("token")
     navigate("/login")
@@ -20,9 +21,9 @@ export default function RightRender({initialState}) {
   );
   return (
     <div>
-      <span className={styles.username}>{initialState.info.username}</span>
+      <span className={styles.username}>{initialState&&initialState.info.username}</span>
       <Popover className={styles.avatar} content={content}>
-        <Avatar  src={initialState.avatar}>
+        <Avatar  src={initialState&&initialState.avatar}>
         </Avatar>
       </Popover>
     </div>

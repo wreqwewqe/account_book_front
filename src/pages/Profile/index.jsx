@@ -79,6 +79,7 @@ export default function Profile() {
          <Form.Item
             label="上传头像"
             name="upload"
+            
             // rules={[
             //     {
             //     required: true,
@@ -87,7 +88,7 @@ export default function Profile() {
             // ]}
         >
             <Upload
-            
+                accept='.jpg'
                 listType="picture"
                 maxCount={1}
             >

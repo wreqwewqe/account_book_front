@@ -2,7 +2,8 @@ import { request } from "umi";
 
 //用户登录
  const login=(data)=>{
-     return request('/login',{
+    console.log("rrr")
+     return request('/api/login',{
         method:"post",
         data
       });
@@ -10,7 +11,7 @@ import { request } from "umi";
 
 //当前登录用户信息
 const currentInfo=(data)=>{
-  return request('/users/info',{
+  return request('/api/users/info',{
      method:"post",
      data
    });
