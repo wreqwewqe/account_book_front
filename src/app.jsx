@@ -62,9 +62,8 @@ export const request = {
   
         if(config.url.startsWith("/v1")){
           console.log("我是ai")
-          config.headers["Authorization"]="Bearer "+"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"
-                                                    //  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
-          // config.url="https://129.226.200.159"+config.url;
+          config.headers["Authorization"]="Bearer "+API_KEY
+              
           console.log("改成过后的config.url",config.url);
           return { ...config};
         }

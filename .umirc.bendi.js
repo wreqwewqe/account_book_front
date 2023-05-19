@@ -60559,6 +60559,7 @@ export default defineConfig({
       255,
       217
     ],
+    API_KEY:process.env.API_KEY
   },
   
   proxy: {
