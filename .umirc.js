@@ -30,7 +30,7 @@ export default defineConfig({
       name:"客户管理",
       // headerRender: true
     },
-    {
+    { 
       path:"/order",
       component:"@/pages/Order",
       name:"订单管理"

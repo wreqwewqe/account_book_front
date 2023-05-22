@@ -59,14 +59,15 @@ export const request = {
         console.log("坏了")
         console.log("666",config.url)
         console.log("777",typeof config.url)
-  
+        console.log("API_KEY",API_KEY)
         if(config.url.startsWith("/v1")){
           console.log("我是ai")
+
           config.headers["Authorization"]="Bearer "+API_KEY
-              
+          // config.headers["Authorization"]="Bearer "+"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"
           console.log("改成过后的config.url",config.url);
           return { ...config};
-        }
+        }0
       // 拦截请求配置，进行个性化处理。
         if(localStorage.getItem("token")){
           console.log("我是登录")
