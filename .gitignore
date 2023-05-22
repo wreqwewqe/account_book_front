@@ -11,4 +11,4 @@
 /dist
 /.mfsu
 /free
-/.env
+.env
