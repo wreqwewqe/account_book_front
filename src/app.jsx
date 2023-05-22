@@ -64,7 +64,6 @@ export const request = {
           console.log("我是ai")
 
           config.headers["Authorization"]="Bearer "+API_KEY
-          // config.headers["Authorization"]="Bearer "+"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"
           console.log("改成过后的config.url",config.url);
           return { ...config};
         }0
