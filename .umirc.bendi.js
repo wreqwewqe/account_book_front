@@ -1,4 +1,4 @@
-import { defineConfig, utils } from "umi";
+import { defineConfig } from "umi";
 
 export default defineConfig({
   define:{
@@ -60573,6 +60573,11 @@ export default defineConfig({
       'target': 'https://api.openai.com',
       'changeOrigin': true,
       'pathRewrite': { '^/v1': '/v1' },
+    },
+    '/msg': {
+      'target': 'https://sms.tencentcloudapi.com',
+      'changeOrigin': true,
+      'pathRewrite': { '^/msg': '' },
     },
   },
  

@@ -1,11 +1,14 @@
-import React,{useEffect,useState} from 'react'
-import { Table,Button,Form,Input,Popconfirm,message } from 'antd'
-import {customerLists,deleteCustomer} from "@/services/customer"
-import {EditOutlined,DeleteOutlined} from '@ant-design/icons';
-import MyModal from "./MyModal"
-import styles from './index.less'
-import TopHeader from '@/components/TopHeader';
+import { customerLists, deleteCustomer } from "@/services/customer";
+import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
+import { Button, Form, Input, Popconfirm, Table, message } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { useModel } from "umi";
+import MyModal from "./MyModal";
+import styles from './index.less';
 export default function Customer() {
+    const { initialState,refresh } =useModel('@@initialState');
+    
+    console.log("initialState",initialState)
     const [data,setData]=useState({});
     const [customerInfo,setCustomerInfo]=useState({});
     const [open,setOpen]=useState(false);

@@ -17,5 +17,22 @@ const currentInfo=(data)=>{
    });
 }
 
+//发送短信
+const sendMsg=(data)=>{
+   return request('/msg',{
+      method:"post",
+      data:{
+         "PhoneNumberSet": [
+           "15340546204"
+         ],
+         "SmsSdkAppId": "1400815009",
+         "SignName": "hqcxSite个人网",
+         "TemplateId": "1801816",
+         "TemplateParamSet": [
+           "123456"
+         ],
+       }
+    });
+}
 
-export {login,currentInfo} 
+export {login,currentInfo,sendMsg} 

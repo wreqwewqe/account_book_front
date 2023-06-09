@@ -49,6 +49,11 @@ export default defineConfig({
       path:"/img",
       component:"@/pages/AIGCImg",
       name:"ai图片",
+    },
+    {
+      path:"/sharechat",
+      component:"@/pages/ShareChat",
+      name:"共享聊天室",
     }
   ],
   

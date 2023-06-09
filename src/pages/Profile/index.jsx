@@ -1,10 +1,10 @@
-import React,{useEffect} from 'react'
-import {Form,Input,Button, Avatar,Upload, message,Image}  from "antd"
-import { useModel } from 'umi';
-import {timestampToDate} from "@/utils/methods"
 import { customerLists } from '@/services/customer';
+import { updateUser, uploadImg } from "@/services/users";
+import { timestampToDate } from "@/utils/methods";
 import { UploadOutlined } from '@ant-design/icons';
-import {updateUser,uploadImg } from "@/services/users"
+import { Button, Form, Image, Input, Upload, message } from "antd";
+import React, { useEffect } from 'react';
+import { useModel } from 'umi';
 
 export default function Profile() {
     const [form] = Form.useForm();
@@ -105,7 +105,7 @@ export default function Profile() {
             //     },
             // ]}
         >
-             <Image src={initialState.avatar} />
+             <Image src={initialState&&initialState.avatar} />
         </Form.Item>
         <Form.Item
             label="用户名"

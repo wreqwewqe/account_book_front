@@ -1,28 +1,32 @@
 // 运行时配置
-
-import { message, Badge } from 'antd';
-import '@/utils/rem.js';
-import { currentInfo } from '@/services/login';
-import {getAvatar} from '@/services/users'
 import RightRender from '@/components/RightRender';
+import { currentInfo } from "@/services/login";
+import { getAvatar } from '@/services/users';
+import '@/utils/rem.js';
 export async function getInitialState() {
+  console.log("初始化")
   const res=await currentInfo({"parent_uuid":localStorage.getItem("parent_uuid")})
+  console.log("curr",res);
   const r=await getAvatar(localStorage.getItem("parent_uuid"));
   console.log("avatar",r.data.avatar)
 
-  // 将 Vec<u8> 转换为 Blob 对象
+  // 将 Vec<u8> 转换为 Blob 对象s
   const blob = new Blob([new Uint8Array(r.data.avatar)], { type: 'image/jpeg' });
   // 创建一个指向 Blob 对象的 URL
   const url = URL.createObjectURL(blob);
-  console.log("url",url);
+  // console.log("url",url);
   console.log("ccccccccc",res)
+
   if(res.code===200){
     return {
       info:res.data.info,
       avatar:url,
+
     };
   }else{
-    return {}
+    return {
+      "qq":7
+    }
   }
  
 }
@@ -62,11 +66,10 @@ export const request = {
         console.log("API_KEY",API_KEY)
         if(config.url.startsWith("/v1")){
           console.log("我是ai")
-
           config.headers["Authorization"]="Bearer "+API_KEY
           console.log("改成过后的config.url",config.url);
           return { ...config};
-        }0
+        }
       // 拦截请求配置，进行个性化处理。
         if(localStorage.getItem("token")){
           console.log("我是登录")

@@ -24,5 +24,6 @@ const uploadImg=(data)=>{
     });
  }
  
+ 
   
   export {updateUser,uploadImg,getAvatar}

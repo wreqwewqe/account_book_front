@@ -16,6 +16,7 @@ import { message, Space, Tabs } from 'antd';
 import { useModel, useNavigate, request } from 'umi';
 import { useState } from 'react';
 import { login } from '@/services/login.js';
+import { sendMsg } from '@/services/login';
 
 
 
@@ -44,7 +45,7 @@ export default () => {
               message.success("登录成功")
             }
           }else{
-            
+            // const res=sendMsg
           }
           
         }}
@@ -133,7 +134,9 @@ export default () => {
                   },
                 ]}
                 onGetCaptcha={async () => {
-                  message.success('获取验证码成功！验证码为：1234');
+                  // message.success('获取验证码成功！验证码为：1234');
+                  await
+                  console.log("code",mobile.value)
                 }}
               />
             </>
